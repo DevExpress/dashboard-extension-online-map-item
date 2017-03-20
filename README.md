@@ -13,6 +13,10 @@ function onBeforeRender(sender) {
 }
 ```
 
+Note that Map JavaScript API applications require an authentication key of a certain provider. Use the dxMap's [key](https://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxMap/Configuration/key/) attribute to provide authentication keys.
+
+For more information on authentication keys, see the required map provider documentation (e.g., [Google](https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en) or [Bing](https://msdn.microsoft.com/en-us/library/ff428642.aspx)).
+
 
 ## Settings
 The **Online Map** dashboard item supports the following settings that you can configure in the Wed Dashboard UI:

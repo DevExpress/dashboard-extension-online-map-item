@@ -1,0 +1,18 @@
+{
+  "name": "dashboard-extension-online-map-item",
+  "version": "1.0.0",
+  "description": "A custom **Online Map** item allows you to place callouts on Google or Bing maps using geographical coordinates.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevExpress/dashboard-extension-online-map-item.git"
+  },
+  "author": "Developer Express Inc.",
+  "homepage": "https://github.com/DevExpress/dashboard-extension-online-map-item#readme",
+   "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-rename": "^1.2.2",    
+    "gulp-typescript": "3.1.6",
+    "typescript": "2.1.6"
+  }
+}

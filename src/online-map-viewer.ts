@@ -54,17 +54,17 @@ module CustomItems {
                 options = {
                     provider: this.getPropertyValue('Provider').toLowerCase(),
                     type: this.getPropertyValue('Type').toLowerCase(),
-                    markers: markers,
-                    autoAdjust: autoAdjust,
                     controls: true,
                     zoom: autoAdjust ? 1000 : 1,
+                    autoAdjust: autoAdjust,
                     width: this.contentWidth(),
                     height: this.contentHeight(),
                     // Use the template below to authenticate the application within the required map provider.
                     //key: { 
                     //    bing: 'BINGAPIKEY',
                     //    google: 'GOOGLEAPIKEY'
-                    //},                    
+                    //},             
+                    markers: markers,
                     routes: routes.length > 0 ? [{
                         weight: 6,
                         color: 'blue',

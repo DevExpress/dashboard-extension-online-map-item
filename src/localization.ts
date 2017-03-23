@@ -2,7 +2,6 @@
     function getDefaultCustomLocalization() {
         return {
             // Binding Panel
-            'DashboardWebCustomItemStringId.ToolBoxCustomItemCaption': "Custom Items",
             'DashboardWebCustomItemStringId.DefaultNameOnlineMap': "Online Map",
 
             'DashboardWebCustomItemStringId.Latitude': "Latitude",

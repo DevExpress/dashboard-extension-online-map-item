@@ -66,8 +66,6 @@ module CustomItems {
             drillDown: false
         },
         icon: ONLINE_MAP_EXTENSION_NAME,
-        groupName: "custom",
-        groupTitle: "DashboardWebCustomItemStringId.ToolBoxCustomItemCaption",
         title: "DashboardWebCustomItemStringId.DefaultNameOnlineMap",
         index: 1
     };

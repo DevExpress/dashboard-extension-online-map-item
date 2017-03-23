@@ -8,7 +8,6 @@ var CustomItems;
     function getDefaultCustomLocalization() {
         return {
             // Binding Panel
-            'DashboardWebCustomItemStringId.ToolBoxCustomItemCaption': "Custom Items",
             'DashboardWebCustomItemStringId.DefaultNameOnlineMap': "Online Map",
             'DashboardWebCustomItemStringId.Latitude': "Latitude",
             'DashboardWebCustomItemStringId.Binding.SetLatitude': "Set Latitude",
@@ -100,8 +99,6 @@ var CustomItems;
             drillDown: false
         },
         icon: CustomItems.ONLINE_MAP_EXTENSION_NAME,
-        groupName: "custom",
-        groupTitle: "DashboardWebCustomItemStringId.ToolBoxCustomItemCaption",
         title: "DashboardWebCustomItemStringId.DefaultNameOnlineMap",
         index: 1
     };

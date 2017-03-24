@@ -1,11 +1,11 @@
 /// <reference path="../knockout/index.d.ts" />
 /// <reference path="../devextreme/index.d.ts" />
 
-declare module DevExpress.JS.Localization {
+declare module DevExpress.Localization {
     var addCultureInfo: (messages: Object) => void;
 }
 
-declare module DevExpress.JS.Dashboard.Metadata {
+declare module DevExpress.Dashboard.Metadata {
     var editorTemplates: {
         text: {
             header: string;
@@ -147,7 +147,7 @@ declare module DevExpress.JS.Dashboard.Metadata {
 }
 
 
-declare module DevExpress.JS.Utils {
+declare module DevExpress.Utils {
     interface ISerializationInfo {
         propertyName: string;
         modelName?: string;
@@ -185,13 +185,13 @@ declare module DevExpress.JS.Utils {
     }
 }
 
-declare module DevExpress.JS.Dashboard {
+declare module DevExpress.Dashboard {
     interface ICustomItemProperty extends Utils.ISerializationInfo {
         sectionName?: string;
     }
 }
 
-declare module DevExpress.JS.Dashboard {
+declare module DevExpress.Dashboard {
     interface ICustomItemModel {
         componentName: KnockoutObservable<string>;
         customItemType: KnockoutObservable<string>;
@@ -216,7 +216,7 @@ declare module DevExpress.JS.Dashboard {
     interface ICustomItemExtension extends IExtension {
         metaData: any;
         createViewerItem: (item: ICustomItemModel, $element: JQuery, content: any, args: {
-            viewerItem: DevExpress.JS.Dashboard.customViewerItem;
+            viewerItem: DevExpress.Dashboard.customViewerItem;
         }) => void;
     }
 
@@ -229,22 +229,24 @@ declare module DevExpress.JS.Dashboard {
 }
 
 
-declare module DevExpress.JS.Dashboard {
+declare module DevExpress.Dashboard {
     type DataType = 'Text' | 'DateTime' | 'Bool' | 'Integer' | 'Float' | 'Double' | 'Decimal';
     type DataItemType = 'Measure' | 'Dimension';
-    interface ICustomItemBinding {
+    export interface IBindingProperty {
         propertyName: string;
         dataItemType: DataItemType;
-        slice?: string;
-        array: boolean;
-        interactivityEnabled?: boolean;
-        coloringEnabled?: boolean;
-        constraints?: {
-            allowedTypes: Array<DataType>;
-        };
+        emptyPlaceholder: string;
+        selectedPlaceholder?: string;
+    }
+    export interface ICustomItemBinding extends IBindingProperty {
         displayName: string;
-        placeholder: string;
-        configurePlaceholder: string;
+        array: boolean;
+        enableInteractivity?: boolean;
+        enableColoring?: boolean;
+        constraints?: {
+            allowedTypes: Array<DataType>
+        }
+        slice?: string;
     }
     interface ICustomItemBindingValue {
         displayName: () => string;
@@ -444,7 +446,7 @@ declare module DevExpress.dashboard.viewerItems {
     }
 }
 
-declare module DevExpress.JS.Dashboard {
+declare module DevExpress.Dashboard {
     class customViewerItem extends DevExpress.dashboard.viewerItems.baseItem {
         model: ICustomItemModel;
         constructor(model: any, $container: any, options: any);

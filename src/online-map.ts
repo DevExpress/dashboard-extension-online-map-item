@@ -4,7 +4,7 @@
 /// <reference path="online-map-viewer.ts" />
 
 module CustomItems {
-    export class OnlineMapItemExtension implements DevExpress.JS.Dashboard.ICustomItemExtension {
+    export class OnlineMapItemExtension implements DevExpress.Dashboard.ICustomItemExtension {
         name = ONLINE_MAP_EXTENSION_NAME;
         metaData = onlineMapMeta;
 
@@ -12,7 +12,7 @@ module CustomItems {
             dashboardControl.registerIcon(ONLINE_MAP_ICON);
         }
 
-        public createViewerItem = (model: DevExpress.JS.Dashboard.ICustomItemModel, $element: JQuery, content: any, args: { viewerItem: DevExpress.JS.Dashboard.customViewerItem }) => {
+        public createViewerItem = (model: DevExpress.Dashboard.ICustomItemModel, $element: JQuery, content: any, args: { viewerItem: DevExpress.Dashboard.customViewerItem }) => {
             if(model.customItemType() === this.name) {
                 args.viewerItem = new CustomItems.onlineMapItem(model, $element, content);
             }

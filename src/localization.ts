@@ -28,5 +28,5 @@
         };
     }
 
-    DevExpress.JS.Localization.addCultureInfo({ messages: getDefaultCustomLocalization() });
+    DevExpress.Localization.addCultureInfo({ messages: getDefaultCustomLocalization() });
 }

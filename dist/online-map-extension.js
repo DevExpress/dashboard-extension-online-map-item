@@ -30,7 +30,7 @@ var CustomItems;
             'DashboardWebCustomItemStringId.OnlineMapSectionName': "Custom Options"
         };
     }
-    DevExpress.JS.Localization.addCultureInfo({ messages: getDefaultCustomLocalization() });
+    DevExpress.Localization.addCultureInfo({ messages: getDefaultCustomLocalization() });
 })(CustomItems || (CustomItems = {}));
 /// <reference path="localization.ts" />
 /// <reference path="../typings/globals/dashboards/dx-dashboard-designer.d.ts" />
@@ -42,10 +42,10 @@ var CustomItems;
                 propertyName: 'Latitude',
                 dataItemType: 'Dimension',
                 array: false,
-                interactivityEnabled: true,
+                enableInteractivity: true,
                 displayName: "DashboardWebCustomItemStringId.Latitude",
-                placeholder: 'DashboardWebCustomItemStringId.Binding.SetLatitude',
-                configurePlaceholder: "DashboardWebCustomItemStringId.Binding.ConfigureLatitude",
+                emptyPlaceholder: 'DashboardWebCustomItemStringId.Binding.SetLatitude',
+                selectedPlaceholder: "DashboardWebCustomItemStringId.Binding.ConfigureLatitude",
                 constraints: {
                     allowedTypes: ['Integer', 'Float', 'Double', 'Decimal']
                 }
@@ -53,10 +53,10 @@ var CustomItems;
                 propertyName: 'Longitude',
                 dataItemType: 'Dimension',
                 array: false,
-                interactivityEnabled: true,
+                enableInteractivity: true,
                 displayName: "DashboardWebCustomItemStringId.Longitude",
-                placeholder: 'DashboardWebCustomItemStringId.Binding.SetLongitude',
-                configurePlaceholder: "DashboardWebCustomItemStringId.Binding.ConfigureLongitude",
+                emptyPlaceholder: 'DashboardWebCustomItemStringId.Binding.SetLongitude',
+                selectedPlaceholder: "DashboardWebCustomItemStringId.Binding.ConfigureLongitude",
                 constraints: {
                     allowedTypes: ['Integer', 'Float', 'Double', 'Decimal']
                 }
@@ -196,7 +196,7 @@ var CustomItems;
             this.mapViewer.option('markers', markers);
         };
         return onlineMapItem;
-    }(DevExpress.JS.Dashboard.customViewerItem));
+    }(DevExpress.Dashboard.customViewerItem));
     CustomItems.onlineMapItem = onlineMapItem;
 })(CustomItems || (CustomItems = {}));
 /// <reference path="meta.ts" />

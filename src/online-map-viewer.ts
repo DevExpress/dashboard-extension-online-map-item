@@ -6,10 +6,10 @@
 /// https://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxMap/
 
 module CustomItems {
-    export class onlineMapItem extends DevExpress.JS.Dashboard.customViewerItem {
+    export class onlineMapItem extends DevExpress.Dashboard.customViewerItem {
         private mapViewer: any;
 
-        constructor(model: DevExpress.JS.Dashboard.ICustomItemModel, $container, options) {
+        constructor(model: DevExpress.Dashboard.ICustomItemModel, $container, options) {
             super(model, $container, options);
             this.mapViewer = null;
         }

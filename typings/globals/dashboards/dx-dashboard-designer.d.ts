@@ -262,7 +262,7 @@ declare module DevExpress.Dashboard {
 
         getBindingValue(propertyName: string, index?: number): Array<ICustomItemBindingValue>;
         getPropertyValue(propertyName: string): any;
-        subscribeProperty(propertyName: string, callback: (newValue: any) => void): void;
+        subscribe(propertyName: string, callback: (newValue: any) => void): void;
 
         setMasterFilter: (row: ICustomDataRow) => boolean;
         drillDown: (row: ICustomDataRow) => boolean;

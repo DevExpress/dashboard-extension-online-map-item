@@ -192,15 +192,6 @@ declare module DevExpress.Dashboard {
 }
 
 declare module DevExpress.Dashboard {
-    interface ICustomItemModel {
-        componentName: KnockoutObservable<string>;
-        customItemType: KnockoutObservable<string>;
-        isMasterFilter: KnockoutComputed<boolean>;
-        isDrillDownEnabled: KnockoutComputed<boolean>;
-        actualSelectionValues: KnockoutObservable<Array<Array<any>>>;
-        iterateData(action: (item: ICustomDataRow) => any): void;
-    }
-
     interface IExtensionRegistrator {
         register(dashboardControl: any): any;
     }
@@ -215,9 +206,7 @@ declare module DevExpress.Dashboard {
 
     interface ICustomItemExtension extends IExtension {
         metaData: any;
-        createViewerItem: (item: ICustomItemModel, $element: JQuery, content: any, args: {
-            viewerItem: DevExpress.Dashboard.customViewerItem;
-        }) => void;
+        createViewerItem: (item: any, $element: JQuery, content: any) => DevExpress.Dashboard.customViewerItem;
     }
 
     interface ICustomDataRow {
@@ -255,218 +244,37 @@ declare module DevExpress.Dashboard {
 }
 
 
-
-
 declare module DevExpress.dashboard.viewerItems {
     abstract class baseItem {
-        _locked: boolean;
-        _isFixedHeight: boolean;
-        customHoverEnabled: boolean;
-        $container: any;
-        exportToMenu: any;
-        selectElementMenu: any;
-        toolbarIsVisible: any;
-        _clearMasterFilterHandler: any;
-        _clearSelectionHandler: any;
-        _toggleSelectionModeHandler: any;
-        _drillUpHandler: any;
-        private _itemMultiselectionEnabled;
-        $preloaderContainer: any;
-        selected: JQueryCallback;
-        clearMasterFilter: JQueryCallback;
-        drillUp: JQueryCallback;
-        contentElementSelection: JQueryCallback;
-        expandValue: JQueryCallback;
-        clientStateUpdate: JQueryCallback;
-        dataRequest: JQueryCallback;
-        itemClick: JQueryCallback;
-        itemHover: JQueryCallback;
-        itemSelectionChanged: JQueryCallback;
-        itemWidgetCreated: JQueryCallback;
-        itemWidgetUpdating: JQueryCallback;
-        itemWidgetUpdated: JQueryCallback;
-        interactivityController: any;
-        customSelectionMode: any;
-        customTargetAxes: any[];
-        customDefaultSelectedValues: any[];
-        options: any;
-        dataController: any;
-        customSelectedTuples: any;
-        $header: JQuery;
-        $contentRoot: JQuery;
-        $toolbarDiv: JQuery;
-        $preloader: JQuery;
-        $shieldingElement: JQuery;
-        $footer: JQuery;
         constructor($container: any, options: any);
-        initializeData(newOptions: any): void;
-        initialDataRequest(): void;
-        isMultiselectionEnabled(): any;
-        clearSelection(): void;
-        selectTuple(tuple: any, state: any): void;
-        setSelection(values: any): void;
-        _applySelection(): void;
-        _isEncodeHtml(): any;
-        _isSupportDataAwareExport(): any;
-        _isLocked(): boolean;
-        _lock(): void;
-        _unlock(): void;
-        _getCustomSelectionMode(): any;
-        _setCustomSelectionMode(value: any): void;
-        _getCustomHoverEnabled(): boolean;
-        _setCustomHoverEnabled(value: any): void;
-        _getCustomTargetAxes(): any[];
-        _setCustomTargetAxes(value: any): void;
-        _getCustomDefaultSelectedValues(): any[];
-        _setCustomDefaultSelectedValues(value: any): void;
-        _getTargetAxes(): any;
-        getSelectedTuples(): any;
-        updateItem(options: any): void;
-        _changeTuple(tuple: any): any[];
-        onSelectionChanged(tuples: any): void;
-        _mustSelectingFired(values: any): boolean;
-        _patchTroughDrillDownValues(values: any): any[];
-        _deductDrillDownValues(values: any): any;
-        _getSelectionCallbackType(values: any, singleSelection: any): any;
-        _selectTuples(tuplesToSelect: any, unaffectedTuples: any, isSelect: any): void;
-        selectTuples(tuples: any, updateTupleDelegate: any, state: any): void;
-        _renderFooter(): any;
-        _updateFooter(): void;
-        abstract renderContent($element: JQuery, changeExisting: boolean, afterRenderCallback?: any): any;
-        renderPartialContent(): void;
-        updateContentState(): void;
-        getInfo(): {
-            name: any;
-            headerHeight: number;
-            position: any;
-            width: any;
-            height: any;
-            virtualSize: any;
-            scroll: any;
-        };
-        getCaption(): any;
-        hasCaption(options?: any): any;
-        hasGroup(): any;
-        isPaneEmpty(): any;
-        render($container?: any): void;
-        updateContent(newOptions: any): void;
-        updateClientState(clientState: any): void;
-        updateState(state: any): void;
-        width(width?: any): any;
-        height(height?: any): any;
+        getName(): string;   
         setSize(width: any, height: any): void;
-        getConstraints(includeBorders: any): any;
-        getOffset(): {
-            width: number;
-            height: number;
-        };
-        updateInteractivityOptions(): void;
-        _updateClientStateInternal(clientState: any): void;
-        _changeContent(updateExisting: any): void;
-        _renderHeader($container?: any): JQuery;
-        _calcHeaderAndFooterHeight(forceNonRendered: any): number;
-        _updateHeader(): void;
-        _renderFloatingToolbar($container: any): void;
-        _ensureToolbarIsRendered(): JQuery;
-        _ensureInternalToolbarIsRendered($internalToolbarDiv: any): void;
-        _updateToolbar(): void;
-        _getMinContentHeight(): any;
-        _generateInnerBorderClasses($element?: any): any[];
-        _generateOuterBorderClasses($element?: any): any[];
-        _isBorderRequired(): any;
-        _resize(oldSize?: any, newSize?: any): void;
-        _updateContentSize(): void;
-        _allocatePreloader(): void;
-        _getPreloaderPosition(containerPosition: any): {
-            left: number;
-            top: any;
-        };
-        _getButtonOffset(useToolbarOffset: any): {
-            left: any;
-            top: any;
-        };
-        _getAnimationOptions(): {
-            enabled: boolean;
-            duration: number;
-        };
-        _getContainerPosition(): {
-            left: any;
-            top: any;
-            width: any;
-            height: any;
-            offsetX: number;
-            offsetY: number;
-        };
-        _getName(): any;
-        _getSelectedValues(): any;
-        _getClearMasterFilterHandler(): any;
-        _getClearSelectionHandler(): any;
-        _getElementInteractionValue(element: any, viewModel: any): void;
-        _getToggleSelectionModeHandler(): any;
-        _getDrillUpHandler(): any;
-        _setSelectedValues(values: any): any;
-        _raiseItemClick(element: any): void;
-        _clickAction(tuple: any): void;
-        _isMultiDataSupported(): boolean;
-        _getDataPoint(element: any): any;
-        _getWidget(): any;
-        _raiseItemWidgetCreated(): void;
-        _raiseItemWidgetUpdating(): void;
-        _raiseItemWidgetUpdated(): void;
-        _raiseItemHover(element: any, state?: any): void;
-        _allowCombineSelectedValues(actionName: any): boolean;
-        _onClearMasterFilter(): void;
-        _onToggleSelectionMode(): void;
-        _onDrillUp(): void;
-        _onContentElementSelection(index: any, elementName: any): void;
-        _onExpandValue(expandValueParams: any): void;
-        _onClientStateUpdate(clientState: any): void;
-        _onDataRequest(): void;
-        _hasInternalButtons(): boolean;
-        _hasDrillUpButton(): boolean;
-        _hasClearMasterFilterButton(): boolean;
-        _hasClearSelectionButton(): boolean;
-        _hasToggleSelectionModeButton(): boolean;
-        _hasTimePeriods(): boolean;
-        _addTimePeriodsToToolbar($internalToolbarDiv: any): void;
-        _isDrillUpEnabled(): boolean;
-        _isClearMasterFilterEnabled(): boolean;
-        _isClearSelectionEnabled(): boolean;
-        _canPerformAction(action: any): boolean;
-        _canPerformDrillDown(): boolean;
-        _canPerformDrillUp(): boolean;
-        _canSetMasterFilter(): boolean;
-        _canSetMultipleMasterFilter(): boolean;
-        isInteractivityActionEnabled(): boolean;
-        _selectionMode(): "multiple" | "none";
-        _getHtml(text: any): any;
-        _getAxisNames(): any;
-        _getDrillDownAxisName(): any;
-        _getDrillDownValues(): any;
+        renderContent($element: JQuery, changeExisting: boolean, afterRenderCallback?: any): void;
+        clearSelection(): void;     
     }
 }
 
 declare module DevExpress.Dashboard {
     class customViewerItem extends DevExpress.dashboard.viewerItems.baseItem {
-        model: ICustomItemModel;
         constructor(model: any, $container: any, options: any);
-        contentWidth(): number;
-        contentHeight(): number;
-        setSize(width: any, height: any): void;
-        renderContent($element: JQuery, changeExisting: boolean, afterRenderCallback?: any): void;
-        clearSelection(): void;
-        allowExportSingleItem(): boolean;
-        getExportInfo(): any;
+
+        iterateData: (action: (item: ICustomDataRow) => any) => void;
+
         getBindingValue(propertyName: string, index?: number): Array<ICustomItemBindingValue>;
         getPropertyValue(propertyName: string): any;
         subscribeProperty(propertyName: string, callback: (newValue: any) => void): void;
-        getInfo(): any;
-        initializeData(newOptions: any): void;
+
         setMasterFilter: (row: ICustomDataRow) => boolean;
         drillDown: (row: ICustomDataRow) => boolean;
         isSelected(row: ICustomDataRow): boolean;
-        private _prepareRow(row);
-        private _getUniqueValues(row);
+        allowSetMasterFilter: (row ?: ICustomDataRow) => boolean;
+        allowDrillDown: (row?: ICustomDataRow) => boolean;
+
+        allowExportSingleItem(): boolean;
+        getExportInfo(): any;
+
+        contentWidth(): number;
+        contentHeight(): number;
     }
 }
 

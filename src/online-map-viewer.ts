@@ -9,7 +9,7 @@ module CustomItems {
     export class onlineMapItem extends DevExpress.Dashboard.customViewerItem {
         private mapViewer: any;
 
-        constructor(model: DevExpress.Dashboard.ICustomItemModel, $container, options) {
+        constructor(model: any, $container, options) {
             super(model, $container, options);
             this.mapViewer = null;
         }
@@ -29,10 +29,10 @@ module CustomItems {
             var markers = [],
                 routes = [],
                 mode = this.getPropertyValue('DisplayMode'),
-                showMarkers = mode === 'Markers' || mode === 'MarkersAndRoutes' || this.model.isMasterFilter(),
+                showMarkers = mode === 'Markers' || mode === 'MarkersAndRoutes' || this.allowSetMasterFilter(),
                 showRoutes = mode === 'Routes' || mode === 'MarkersAndRoutes';
             if(this.getBindingValue('Latitude').length > 0 && this.getBindingValue('Longitude').length > 0) {
-                this.model.iterateData(row => {
+                this.iterateData(row => {
                     var latitude = row.getValue('Latitude');
                     var longitude = row.getValue('Longitude');
                     if (latitude && longitude) {

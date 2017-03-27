@@ -133,9 +133,9 @@ var CustomItems;
         };
         onlineMapItem.prototype.renderContent = function ($element, changeExisting, afterRenderCallback) {
             var _this = this;
-            var markers = [], routes = [], mode = this.getPropertyValue('DisplayMode'), showMarkers = mode === 'Markers' || mode === 'MarkersAndRoutes' || this.model.isMasterFilter(), showRoutes = mode === 'Routes' || mode === 'MarkersAndRoutes';
+            var markers = [], routes = [], mode = this.getPropertyValue('DisplayMode'), showMarkers = mode === 'Markers' || mode === 'MarkersAndRoutes' || this.allowSetMasterFilter(), showRoutes = mode === 'Routes' || mode === 'MarkersAndRoutes';
             if (this.getBindingValue('Latitude').length > 0 && this.getBindingValue('Longitude').length > 0) {
-                this.model.iterateData(function (row) {
+                this.iterateData(function (row) {
                     var latitude = row.getValue('Latitude');
                     var longitude = row.getValue('Longitude');
                     if (latitude && longitude) {
@@ -207,13 +207,10 @@ var CustomItems;
 (function (CustomItems) {
     var OnlineMapItemExtension = (function () {
         function OnlineMapItemExtension(dashboardControl) {
-            var _this = this;
             this.name = CustomItems.ONLINE_MAP_EXTENSION_NAME;
             this.metaData = CustomItems.onlineMapMeta;
-            this.createViewerItem = function (model, $element, content, args) {
-                if (model.customItemType() === _this.name) {
-                    args.viewerItem = new CustomItems.onlineMapItem(model, $element, content);
-                }
+            this.createViewerItem = function (model, $element, content) {
+                return new CustomItems.onlineMapItem(model, $element, content);
             };
             dashboardControl.registerIcon(CustomItems.ONLINE_MAP_ICON);
         }

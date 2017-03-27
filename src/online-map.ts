@@ -12,10 +12,8 @@ module CustomItems {
             dashboardControl.registerIcon(ONLINE_MAP_ICON);
         }
 
-        public createViewerItem = (model: DevExpress.Dashboard.ICustomItemModel, $element: JQuery, content: any, args: { viewerItem: DevExpress.Dashboard.customViewerItem }) => {
-            if(model.customItemType() === this.name) {
-                args.viewerItem = new CustomItems.onlineMapItem(model, $element, content);
-            }
+        public createViewerItem = (model: any, $element: JQuery, content: any) => {
+            return new CustomItems.onlineMapItem(model, $element, content);
         };
     }
 }

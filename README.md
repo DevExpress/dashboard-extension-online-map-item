@@ -26,10 +26,7 @@ The **Online Map** dashboard item supports the following settings that you can c
 
 
 ## License
-
-Familiarize yourself with the [.NET Controls & Frameworks Commercial License](https://www.devexpress.com/Support/EULAs/NetComponents.xml). [Free trial is available](https://go.devexpress.com/DevExpressDownload_UniversalTrial.aspx)!
-
-**The Online Map custom dashboard extension is released as a MIT-licensed (free and open-source) add-on to the Web Dashboard.**
+This extension is distributed under the **MIT** license (free and open-source), but can only be used with a commercial DevExpress Dashboard software product. You can [review the license terms](https://www.devexpress.com/Support/EULAs/NetComponents.xml) or [download a free trial version](https://go.devexpress.com/DevExpressDownload_UniversalTrial.aspx) of the Dashboard suite at [DevExpress.com](https://www.devexpress.com).
 
 ## Support & Feedback
 

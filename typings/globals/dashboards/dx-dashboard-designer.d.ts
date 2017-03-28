@@ -267,7 +267,7 @@ declare module DevExpress.Dashboard {
         setMasterFilter: (row: ICustomDataRow) => boolean;
         drillDown: (row: ICustomDataRow) => boolean;
         isSelected(row: ICustomDataRow): boolean;
-        allowSetMasterFilter: (row ?: ICustomDataRow) => boolean;
+        allowMasterFilter: (row ?: ICustomDataRow) => boolean;
         allowDrillDown: (row?: ICustomDataRow) => boolean;
 
         allowExportSingleItem(): boolean;

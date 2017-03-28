@@ -29,7 +29,7 @@ module CustomItems {
             var markers = [],
                 routes = [],
                 mode = this.getPropertyValue('DisplayMode'),
-                showMarkers = mode === 'Markers' || mode === 'MarkersAndRoutes' || this.allowSetMasterFilter(),
+                showMarkers = mode === 'Markers' || mode === 'MarkersAndRoutes' || this.allowMasterFilter(),
                 showRoutes = mode === 'Routes' || mode === 'MarkersAndRoutes';
             if(this.getBindingValue('Latitude').length > 0 && this.getBindingValue('Longitude').length > 0) {
                 this.iterateData(row => {

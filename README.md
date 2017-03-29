@@ -30,6 +30,6 @@ This extension is distributed under the **MIT** license (free and open-source), 
 
 ## Support & Feedback
 
-* Follow [this guideline](https://isc.devexpress.com/Thread/WorkplaceDetails/T491859) for general information about a custom extension.
-* To learn how to create a custom item, see the following [KB article](https://isc.devexpress.com/Thread/WorkplaceDetails/T491984).
+* Follow [this guideline](https://www.devexpress.com/Support/Center/Question/Details/T491859) for general information about a custom extension.
+* To learn how to create a custom item, see the following [KB article](https://www.devexpress.com/Support/Center/Question/Details/T491984).
 * To address questions regarding the Web Dashboard and JavaScript API, use [DevExpress Support Center](https://www.devexpress.com/Support/Center).

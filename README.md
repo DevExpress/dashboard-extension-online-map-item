@@ -1,5 +1,7 @@
 A custom **Online Map** item allows you to place callouts on Google or Bing maps using geographical coordinates.
 
+![image](https://cloud.githubusercontent.com/assets/17986517/25003702/6d23bb42-2059-11e7-8539-61912c815960.png)
+
 This dashboard item supports the [Master-Filtering](https://documentation.devexpress.com/#Dashboard/CustomDocument117060) feature.
 
 ## Installation

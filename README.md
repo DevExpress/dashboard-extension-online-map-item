@@ -1,16 +1,33 @@
-A custom **Online Map** item allows you to place callouts on Google or Bing maps using geographical coordinates.
+The **Online Map** extension is a [custom dashboard item](https://www.devexpress.com/Support/Center/Question/Details/T491984) that allows you to place callouts on Google or Bing maps using geographical coordinates.
 
-This dashboard item supports the [Master-Filtering](https://documentation.devexpress.com/#Dashboard/CustomDocument117060) feature.
+This custom item supports the [Master-Filtering](https://documentation.devexpress.com/#Dashboard/CustomDocument117060) feature.
+
 
 ## Installation
 
-To add the Online Map dashboard item to the Web Dashboard, register a custom item extension in the Web Dashboard's [BeforeRender](https://documentation.devexpress.com/#Dashboard/DevExpressDashboardWebScriptsASPxClientDashboard_BeforeRendertopic) event.
+1. Download the required scripts [here](https://github.com/DevExpress/dashboard-extension-online-map-item/releases) and place them in your project.
 
-```javascript
-function onBeforeRender(sender) {
-  var dashboardControl = sender.getDesigner();
-  dashboardControl.registerExtension(new CustomItems.OnlineMapItemExtension(dashboardControl));
-}
+2. Attach the download script to the project.
+```xml
+<script src="/your-path/dashboard-extension-webpage-item/dist/webpage-extension.min.js"></script>
+```
+
+3. Handle the Web Dashboard's [BeforeRender](https://documentation.devexpress.com/#Dashboard/DevExpressDashboardWebScriptsASPxClientDashboard_BeforeRendertopic) event to perform client-side customization of the Web Dashboard control before the control and its elements have been rendered.
+```xml
+<dx:ASPxDashboard ID="ASPxDashboard1" runat="server" DashboardStorageFolder="~/App_Data">
+  <ClientSideEvents BeforeRender="onBeforeRender" />
+</dx:ASPxDashboard>
+```
+
+4. Register the custom item extension to add the Online Map to the Web Dashboard.
+
+```xml
+<script type="text/javascript">
+  function onBeforeRender(sender) {
+    var dashboardControl = sender.GetDashboardControl();
+    dashboardControl.registerExtension(new CustomItems.OnlineMapItemExtension(dashboardControl));
+  }
+</script>
 ```
 
 Note that Map JavaScript API applications require an authentication key of a certain provider. Use the dxMap's [key](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxMap/Configuration/key/) attribute to provide authentication keys.

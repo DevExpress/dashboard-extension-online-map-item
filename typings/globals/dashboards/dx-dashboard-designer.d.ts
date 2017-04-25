@@ -264,11 +264,11 @@ declare module DevExpress.Dashboard {
         getPropertyValue(propertyName: string): any;
         subscribe(propertyName: string, callback: (newValue: any) => void): void;
 
+        isSelected(row: ICustomDataRow): boolean;
+        canMasterFilter: (row?: ICustomDataRow) => boolean;
+        canDrillDown: (row?: ICustomDataRow) => boolean;
         setMasterFilter: (row: ICustomDataRow) => boolean;
         drillDown: (row: ICustomDataRow) => boolean;
-        isSelected(row: ICustomDataRow): boolean;
-        allowMasterFilter: (row ?: ICustomDataRow) => boolean;
-        allowDrillDown: (row?: ICustomDataRow) => boolean;
 
         allowExportSingleItem(): boolean;
         getExportInfo(): any;

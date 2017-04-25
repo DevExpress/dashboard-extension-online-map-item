@@ -133,7 +133,7 @@ var CustomItems;
         };
         onlineMapItem.prototype.renderContent = function ($element, changeExisting, afterRenderCallback) {
             var _this = this;
-            var markers = [], routes = [], mode = this.getPropertyValue('DisplayMode'), showMarkers = mode === 'Markers' || mode === 'MarkersAndRoutes' || this.allowMasterFilter(), showRoutes = mode === 'Routes' || mode === 'MarkersAndRoutes';
+            var markers = [], routes = [], mode = this.getPropertyValue('DisplayMode'), showMarkers = mode === 'Markers' || mode === 'MarkersAndRoutes' || this.canMasterFilter(), showRoutes = mode === 'Routes' || mode === 'MarkersAndRoutes';
             if (this.getBindingValue('Latitude').length > 0 && this.getBindingValue('Longitude').length > 0) {
                 this.iterateData(function (row) {
                     var latitude = row.getValue('Latitude');

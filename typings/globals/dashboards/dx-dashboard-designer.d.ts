@@ -210,10 +210,9 @@ declare module DevExpress.Dashboard {
     }
 
     interface ICustomDataRow {
-        getColor: (property: string, index?: number) => any;
-        getValue: (property: string, index?: number) => any;
-        getUniqueValue: (property: string, index?: number) => any;
-        getDisplayText: (property: string, index?: number) => any;
+        getColor: (property?: string) => Array<string>;
+        getDisplayText: (property: string) => Array<string>;
+        getValue: (property: string) => Array<any>;
     }
 }
 

@@ -33,8 +33,8 @@ module CustomItems {
                 showRoutes = mode === 'Routes' || mode === 'MarkersAndRoutes';
             if(this.getBindingValue('Latitude').length > 0 && this.getBindingValue('Longitude').length > 0) {
                 this.iterateData(row => {
-                    var latitude = row.getValue('Latitude');
-                    var longitude = row.getValue('Longitude');
+                    var latitude = row.getValue('Latitude')[0];
+                    var longitude = row.getValue('Longitude')[0];
                     if (latitude && longitude) {
                         if (showMarkers) {
                             markers.push({

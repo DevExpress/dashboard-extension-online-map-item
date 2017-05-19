@@ -16,8 +16,10 @@ module CustomItems {
 
         setSize(width, height) {
             super.setSize(width, height);
-            this.mapViewer.option('width', this.contentWidth());
-            this.mapViewer.option('height', this.contentHeight());
+            let contentWidth = this.contentWidth(),
+                contentHeight = this.contentHeight();
+            this.mapViewer.option('width', contentWidth);
+            this.mapViewer.option('height', contentHeight);
         }
 
         clearSelection() {

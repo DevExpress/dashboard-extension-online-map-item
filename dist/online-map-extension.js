@@ -124,8 +124,9 @@ var CustomItems;
         }
         onlineMapItem.prototype.setSize = function (width, height) {
             _super.prototype.setSize.call(this, width, height);
-            this.mapViewer.option('width', this.contentWidth());
-            this.mapViewer.option('height', this.contentHeight());
+            var contentWidth = this.contentWidth(), contentHeight = this.contentHeight();
+            this.mapViewer.option('width', contentWidth);
+            this.mapViewer.option('height', contentHeight);
         };
         onlineMapItem.prototype.clearSelection = function () {
             _super.prototype.clearSelection.call(this);

@@ -69,7 +69,7 @@ gulp build
 
 ... or use a local Gulp version.
 ```Batchfile
-./node_modules/.bin/gulp build
+.\node_modules\.bin\gulp build
 ```
 
 You can find the resulting files at ```...\dashboard-extension-online-map-item\dist```:

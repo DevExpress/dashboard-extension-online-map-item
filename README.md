@@ -34,12 +34,11 @@ This custom item supports the [Master-Filtering](https://documentation.devexpres
 
 5. Register the custom item extension to add the Online Map to the Web Dashboard.
 
-```xml
-<script type="text/javascript">
-  function onBeforeRender(sender) {
-    var dashboardControl = sender.GetDashboardControl();
-    dashboardControl.registerExtension(new CustomItems.OnlineMapItemExtension(dashboardControl));
-  }
+```javascript
+function onBeforeRender(sender) {
+  var dashboardControl = sender.GetDashboardControl();
+  dashboardControl.registerExtension(new CustomItems.OnlineMapItemExtension(dashboardControl));
+}
 </script>
 ```
 

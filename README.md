@@ -9,12 +9,12 @@ This custom item supports the [Master-Filtering](https://documentation.devexpres
 
 2. Add the *dist* folder in your project.
 
-3. Attach the download script to the project inside the `<head>` section onto the page containing Web Dashboard.
+3. Attach the download script to the project inside the `<body>` section before the end tag onto the page containing Web Dashboard.
 ```xml
-<head>
-    <script src="/dist/online-map-extension.min.js"></script>
+<body>
     <!-- ... -->
-</head>
+    <script src="/dist/online-map-extension.min.js"></script>
+</body>
 ```
 
 4. Handle the Web Dashboard's [BeforeRender](https://documentation.devexpress.com/#Dashboard/DevExpressDashboardWebScriptsASPxClientDashboard_BeforeRendertopic) event to perform client-side customization of the Web Dashboard control before the control and its elements have been rendered.
